@@ -1,57 +1,225 @@
-.main_bg{
-    width:100vw;
+.wrap{
+    width:100%;
     height:100vh;
-    position:fixed;
-    background-color:rgb(240, 240, 240);
+    position:relative;
+    overflow: hidden;
+    scroll-snap-type: y mandatory;
+    touch-action: none; // 모바일에서 기본 스크롤 방지
+}
+
+.section{
+    width:100%;
+    height:100%;
+    scroll-snap-align: start;
+}
+
+
+.topbar{
+    width:100%;
+    height:5%;
+    background-color:#111;
+    position:absolute;
+    top:0;
+}
+.bottombar{
+    width:100%;
+    height:5%;
+    background-color:#111;
+    position:absolute;
+    bottom:0;
+}
+
+
+.content{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:100%;
+    height:90%;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+.topline{
+    width:100%;
+    height:auto;
+    line-height:3rem;
+    font-size:1.4rem;
+    font-weight:400;
+    padding-left:2%;
+}
+.title_box{
+    width:100%;
+    height:auto;
+}
+.titlebar{
+    width:100%;
+    height:8px;
+    background-color:#111;
+}
+.title{
+    font-family:'s-coredream';
+    width:100%;
+    font-size:3rem;
+    font-weight:900;
+    line-height:3.8rem;
+    text-align:center;
+    padding:3% 0 3% 0;
+    position:relative;
+    margin-top:6px;
+    margin-bottom:6px;
+}
+    .title:after{
+        content:'';
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:1px;
+        background-color:#111;
+    }
+    .title:before{
+        content:'';
+        position:absolute;
+        bottom:0;
+        left:0;
+        width:100%;
+        height:1px;
+        background-color:#111;
+    }
+
+.subtitle{
+    width:100%;
+    height:auto;
+    font-size:1.6rem;
+    text-align:center;
+    line-height:2.4rem;
+    padding:16px 0 4px 0;
+}
+
+.maincover{
+    width:100%;
+    height:auto;
     display:flex;
     justify-content:center;
-    z-index: -999;
+    padding:30px 0 36px 0;
 }
-    .main_title{
-        margin-top:10%;
-        color:#fff;
-        font-size:5rem;
-        font-family: 'S-CoreDream';
-        font-weight: 100;
-        @media(width < 980px){
-            font-size:4rem;
-            font-weight: 100;
-        }
-        @media(width < 480px){
-            font-size:2.6rem;
-        font-weight: 100;
-        }
+    .maincover img{
+        width:60%;
+        height:auto;
     }
 
-.logout_btn{
-    display:block;
-    position:fixed;
-    top:70px;
-    right:0;
-    width:90px;
-    height:30px;
-    background-color:#000;
+.people{
+    width:100%;
+    height:auto;
+    font-size:1.6rem;
+    font-weight:400;
+    line-height:3rem;
+    text-align:center;
+}
+.b{
+    font-weight:500;
+    font-size:1.8rem;
+}
+
+.date{
+    width:100%;
+    height:auto;
+    font-size:1.6rem;
+    font-weight:300;
+    line-height:3rem;
+    text-align:center;
+    margin-top:20px;
+}
+
+.location{
+    width:100%;
+    height:auto;
+    font-size:1.6rem;
+    font-weight:300;
+    line-height:2rem;
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.sec02{
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color:#111;
+}
+.photo_title{
+    width:100%;
+    background-color:#111;
+    font-size:1.8rem;
+    height:5%;
     color:#fff;
     text-align:center;
-    line-height:30px;
-    cursor:pointer;
-    @media(width < 980px){
-        top:56px;
-        height:26px;
-        width:70px;
-        line-height:26px;
-    }
-    @media(width < 480px){
-        top:40px;
-        height:22px;
-        width:60px;
-        line-height:22px;
-    }
+    box-shadow:0 1px 0 0 #fff;
+    font-weight:200;
+}
+.photo_box{
+    width:100%;
+    height:17%;
+    display:flex;
+    justify-content:space-evenly;
+    align-items:center;
+}
+.photo{
+    width:31%;
+    height:100%;
+    overflow:hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.photo img{
+    height:100%;
+    display: block;
+    margin: 0 auto;
+    filter:grayscale(0.9);
+}
+.photo img:hover{
+    filter:grayscale(0);
 }
 
 
 
+.map_title{
+    width:100%;
+    height:auto;
+    font-size:2rem;
+    font-weight:600;
+    text-align:center;
+    line-height:3rem;
+    padding:10px 0 10px 0;
+}
+.map{
+    width:100%;
+    height:50%;
+    background-color:#e6e6e6;
+    margin-bottom:10px;
+}
 
+.explain{
+    width:100%;
+    height:auto;
+}
+.vehicle{
+    width:100%;
+    height:auto;
+    font-size:2.2rem;
+    padding-left:2%;
+    font-weight:500;
+}
+.detail{
+    padding-top:6px;
+    padding-left:4%;
+    font-size:1.8rem;
+}
 
 
 
