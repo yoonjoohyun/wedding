@@ -1,7 +1,7 @@
 <template>
 <div class="wrap">
     <div class="content">
-        <div class="topline">소중한 시간 내어주셔서 감사합니다.</div>
+        <div class="topline">thth소중한 시간 내어주셔서 감사합니다.</div>
         <div class="title_box">
             <div class="titlebar"></div>
             <div class="title">YOU & ME 10 YEARS<br>WE TOGETHER 100 YEARS</div>
