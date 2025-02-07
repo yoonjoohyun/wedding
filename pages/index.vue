@@ -26,48 +26,49 @@
         />
         <div class="photo_box">
             <div class="photo" @click="openPhotoBox(0)">
-                <img src="/images/01.webp"/>
+                <img src="~/assets/images/01.webp"/>
             </div>
             <div class="photo" @click="openPhotoBox(1)">
-                <img src="/images/02.webp"/>
+                <img src="~/assets/images/02.webp"/>
             </div>
             <div class="photo" @click="openPhotoBox(2)">
-                <img src="/images/03.webp"/>
+                <img src="~/assets/images/03.webp"/>
             </div>
         </div>
         <div class="photo_box">
             <div class="photo" @click="openPhotoBox(3)">
-                <img src="/images/04.webp"/>
+                <img src="~/assets/images/04.webp"/>
             </div>
             <div class="photo" @click="openPhotoBox(4)">
-                <img src="/images/05.webp"/>
+                <img src="~/assets/images/05.webp"/>
             </div>
             <div class="photo" @click="openPhotoBox(5)">
-                <img src="/images/06.webp"/>
+                <img src="~/assets/images/06.webp"/>
             </div>
         </div>
         <div class="photo_box">
             <div class="photo" @click="openPhotoBox(6)">
-                <img src="/images/07.webp"/>
+                <img src="~/assets/images/07.webp"/>
             </div>
             <div class="photo" @click="openPhotoBox(7)">
-                <img src="/images/08.webp"/>
+                <img src="~/assets/images/08.webp"/>
             </div>
             <div class="photo" @click="openPhotoBox(8)">
-                <img src="/images/09.webp"/>
+                <img src="~/assets/images/09.webp"/>
             </div>
         </div>
         <div class="photo_box">
             <div class="photo" @click="openPhotoBox(9)">
-                <img src="/images/10.webp"/>
+                <img src="~/assets/images/10.webp"/>
             </div>
             <div class="photo" @click="openPhotoBox(10)">
-                <img src="/images/11.webp"/>
+                <img src="~/assets/images/11.webp"/>
             </div>
             <div class="photo" @click="openPhotoBox(11)">
-                <img src="/images/12.webp"/>
+                <img src="~/assets/images/12.webp"/>
             </div>
         </div>
+        <div class="empty"></div>
     </div>
     <div class="content03">
         <div class="map_title">
@@ -91,29 +92,24 @@
 <script setup>
 import PhotoBox from '~/components/PhotoBox.vue';
 import { ref } from 'vue';
-
-// 이미지 import
-import img1 from '@/assets/images/01.webp';
-import img2 from '@/assets/images/02.webp';
-import img3 from '@/assets/images/03.webp';
-import img4 from '@/assets/images/04.webp';
-import img5 from '@/assets/images/05.webp';
-import img6 from '@/assets/images/06.webp';
-import img7 from '@/assets/images/07.webp';
-import img8 from '@/assets/images/08.webp';
-import img9 from '@/assets/images/09.webp';
-import img10 from '@/assets/images/10.webp';
-import img11 from '@/assets/images/11.webp';
-import img12 from '@/assets/images/12.webp';
+import img1 from '~/assets/images/01.webp';
+import img2 from '~/assets/images/02.webp';
+import img3 from '~/assets/images/03.webp';
+import img4 from '~/assets/images/04.webp';
+import img5 from '~/assets/images/05.webp';
+import img6 from '~/assets/images/06.webp';
+import img7 from '~/assets/images/07.webp';
+import img8 from '~/assets/images/08.webp';
+import img9 from '~/assets/images/09.webp';
+import img10 from '~/assets/images/10.webp';
+import img11 from '~/assets/images/11.webp';
+import img12 from '~/assets/images/12.webp';
 
 const isPhotoBoxOpen = ref(false);
 const currentImageIndex = ref(0);
 
 // 모든 이미지 경로를 배열로 저장
-const allImages = [
-    img1, img2, img3, img4, img5, img6,
-    img7, img8, img9, img10, img11, img12
-];
+const allImages = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12,];
 
 const openPhotoBox = (index) => {
     currentImageIndex.value = index;
