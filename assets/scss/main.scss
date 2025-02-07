@@ -1,10 +1,12 @@
 .wrap{
     width:100%;
+    max-width:560px;
     height:100vh;
     position:relative;
     overflow: hidden;
     scroll-snap-type: y mandatory;
     touch-action: none; // 모바일에서 기본 스크롤 방지
+    margin:0 auto;
 }
 
 .section{

@@ -91,11 +91,15 @@
             </div>
         </div>
     </div>
+    <div class="section">
+        <Guestbook />
+    </div>
 </div>
 </template>
 
 <script setup>
 import { ref } from 'vue';
+import Guestbook from '~/components/Guestbook.vue'
 
 const currentSection = ref(0);
 const isScrolling = ref(false);
