@@ -65,23 +65,26 @@ const fetchMessages = async () => {
 }
 
 const submitMessage = async () => {
-  const { error } = await supabase
-    .from('guestbook')
-    .insert([
-      {
-        name: name.value,
-        message: message.value,
-      }
-    ])
+  try {
+    const { error } = await supabase
+      .from('guestbook')
+      .insert([
+        {
+          name: name.value,
+          message: message.value,
+        }
+      ])
 
-  if (error) {
+    if (error) throw error
+
+    name.value = ''
+    message.value = ''
+    await fetchMessages()
+    
+  } catch (error) {
     console.error('Error submitting message:', error)
-    return
+    alert('메시지 등록에 실패했습니다. 잠시 후 다시 시도해주세요.')
   }
-
-  name.value = ''
-  message.value = ''
-  await fetchMessages()
 }
 
 onMounted(() => {

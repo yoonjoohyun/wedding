@@ -1,9 +1,5 @@
 <template>
-<div class="wrap" 
-    @wheel="handleWheel"
-    @touchstart="handleTouchStart"
-    @touchmove="handleTouchMove"
-    @touchend="handleTouchEnd">
+<div class="wrap">
     <div class="content">
         <div class="topline"><p>♡ 주현이와 영경이의 결혼식에 초대합니다 ♡</p></div>
         <div class="title_box">
@@ -91,7 +87,7 @@
         </div>
     </div>
     <div class="content04">
-      <Guestbook />
+        <Guestbook/>
     </div>
 </div>
 </template>
@@ -111,7 +107,6 @@ import img9 from '~/assets/images/09.webp';
 import img10 from '~/assets/images/10.webp';
 import img11 from '~/assets/images/11.webp';
 import img12 from '~/assets/images/12.webp';
-import Guestbook from '~/components/Guestbook.vue'
 
 const isPhotoBoxOpen = ref(false);
 const currentImageIndex = ref(0);
