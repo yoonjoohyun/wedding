@@ -2,6 +2,7 @@
     width:100%;
     max-width:560px;
     height:100vh;
+<<<<<<< HEAD
     position:relative;
     overflow: hidden;
     scroll-snap-type: y mandatory;
@@ -19,29 +20,21 @@
 .topbar{
     width:100%;
     height:5%;
+=======
+>>>>>>> d0b7f19a98f3bfb33f55967261d28a3c740aa6cc
     background-color:#111;
-    position:absolute;
-    top:0;
+    padding-left:2px;
 }
-.bottombar{
-    width:100%;
-    height:5%;
-    background-color:#111;
-    position:absolute;
-    bottom:0;
-}
+
 
 
 .content{
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
     width:100%;
-    height:90%;
+    height:100%;
     display:flex;
     flex-direction:column;
     justify-content:space-between;
+    background-color:#fff;
 }
 .topline{
     width:100%;
@@ -50,6 +43,8 @@
     font-size:1.4rem;
     font-weight:400;
     padding-left:2%;
+    background-color:#111;
+    color:#fff;
 }
 .title_box{
     width:100%;
@@ -132,8 +127,24 @@
     font-weight:300;
     line-height:3rem;
     text-align:center;
-    margin-top:20px;
 }
+
+.bottom_space{
+    width:100%;
+    margin-top:6%;
+    height:12%;
+    background-color:#ef6161;
+    color:#fff;
+    text-align:center;
+    font-weight:200;
+    font-size:1.8rem;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 6%;
+}
+
+
+
 
 .location{
     width:100%;
@@ -142,26 +153,15 @@
     font-weight:300;
     line-height:2rem;
     text-align:center;
-    margin-bottom:20px;
 }
 
-.sec02{
+.content02{
     width:100%;
     height:100%;
     display:flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     background-color:#111;
-}
-.photo_title{
-    width:100%;
-    background-color:#111;
-    font-size:1.8rem;
-    height:5%;
-    color:#fff;
-    text-align:center;
-    box-shadow:0 1px 0 0 #fff;
-    font-weight:200;
 }
 .photo_box{
     width:100%;
@@ -172,14 +172,15 @@
 }
 .photo{
     width:31%;
-    height:100%;
+    height:auto;
     overflow:hidden;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .photo img{
-    height:100%;
+    width:100%;
+    height:auto;
     display: block;
     margin: 0 auto;
     filter:grayscale(0.9);
