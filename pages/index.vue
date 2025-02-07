@@ -75,7 +75,7 @@
             찾아오시는 길
         </div>
         <div class="map">
-
+            <div id="map" style="width:100%;height:400px;"></div>
         </div>
         <div class="explain">
             <div class="vehicle">버스</div>
@@ -93,8 +93,10 @@
 </template>
 
 <script setup>
+const config = useRuntimeConfig();
+
 import PhotoBox from '~/components/PhotoBox.vue';
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import img1 from '~/assets/images/01.webp';
 import img2 from '~/assets/images/02.webp';
 import img3 from '~/assets/images/03.webp';
@@ -122,6 +124,52 @@ const openPhotoBox = (index) => {
 const closePhotoBox = () => {
     isPhotoBoxOpen.value = false;
 };
+
+// 카카오맵 관련 설정
+onMounted(() => {
+  const script = document.createElement('script');
+  script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${config.public.KAKAO_MAP_API_KEY}`;
+  script.async = true;
+  
+  script.onload = () => {
+    window.kakao.maps.load(() => {
+      const container = document.getElementById('map');
+      const options = {
+        center: new window.kakao.maps.LatLng(37.5359, 127.1339), // KDW웨딩 좌표
+        level: 3
+      };
+      
+      const map = new window.kakao.maps.Map(container, options);
+      
+      // 마커 생성
+      const markerPosition = new window.kakao.maps.LatLng(37.5359, 127.1339);
+      const marker = new window.kakao.maps.Marker({
+        position: markerPosition
+      });
+      
+      // 마커를 지도에 표시
+      marker.setMap(map);
+      
+      // 인포윈도우 생성
+      const iwContent = '<div style="padding:5px;">KDW웨딩</div>';
+      const infowindow = new window.kakao.maps.InfoWindow({
+        content: iwContent
+      });
+      
+      // 마커에 마우스오버 이벤트 등록
+      window.kakao.maps.event.addListener(marker, 'mouseover', () => {
+        infowindow.open(map, marker);
+      });
+      
+      // 마커에 마우스아웃 이벤트 등록
+      window.kakao.maps.event.addListener(marker, 'mouseout', () => {
+        infowindow.close();
+      });
+    });
+  };
+
+  document.head.appendChild(script);
+});
 </script>
 
 <style lang="scss" scoped src="~/assets/scss/main.scss"></style>

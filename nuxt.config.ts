@@ -26,7 +26,8 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       SUPABASE_URL: process.env.SUPABASE_URL,
-      SUPABASE_KEY: process.env.SUPABASE_KEY
+      SUPABASE_KEY: process.env.SUPABASE_KEY,
+      KAKAO_MAP_API_KEY: process.env.NUXT_PUBLIC_KAKAO_MAP_API_KEY
     }
-  }
+  },
 })
