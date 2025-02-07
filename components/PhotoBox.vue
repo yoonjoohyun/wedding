@@ -3,7 +3,7 @@
     <div class="modal-content">
       <button class="close-btn" @click="closeModal">&times;</button>
       <swiper
-        :modules="[SwiperNavigation]"
+        :modules="[Navigation]"
         :slides-per-view="1"
         :navigation="true"
         :initial-slide="initialSlide"
