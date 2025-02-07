@@ -13,5 +13,11 @@ export default defineNuxtConfig({
       ]
     }
   },
-  css: ['~/assets/scss/fonts.scss']
+  css: ['~/assets/scss/fonts.scss'],
+  runtimeConfig: {
+    public: {
+      SUPABASE_URL: process.env.SUPABASE_URL,
+      SUPABASE_KEY: process.env.SUPABASE_KEY
+    }
+  }
 })
