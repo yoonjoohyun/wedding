@@ -28,5 +28,17 @@ export default defineNuxtConfig({
       SUPABASE_URL: process.env.SUPABASE_URL,
       SUPABASE_KEY: process.env.SUPABASE_KEY
     }
+  },
+  ssr: false,  // 클라이언트 사이드 렌더링만 사용
+  app: {
+    head: {
+      script: [
+        {
+          src: `//dapi.kakao.com/v2/maps/sdk.js?appkey=76ad6b7f2886a2069792b36501302db7`,
+          defer: true
+        }
+      ]
+    }
   }
 })
+

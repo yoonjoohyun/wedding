@@ -75,7 +75,19 @@
             찾아오시는 길
         </div>
         <div class="map">
-
+            <KakaoMap
+                v-if="isMapLoaded"
+                :center="{ lat: coordinate.lat, lng: coordinate.lng }"
+                :level="3"
+                style="width: 100%; height: 400px;"
+            >
+                <KakaoMapMarker
+                    :position="{ lat: coordinate.lat, lng: coordinate.lng }"
+                />
+            </KakaoMap>
+            <div v-else class="loading-map">
+                지도를 불러오는 중입니다...
+            </div>
         </div>
         <div class="explain">
             <div class="vehicle">버스</div>
@@ -93,8 +105,31 @@
 </template>
 
 <script setup>
+import { ref, onMounted } from 'vue';
+import { KakaoMap, KakaoMapMarker } from 'vue3-kakao-maps';
+
+const isMapLoaded = ref(false);
+const coordinate = ref({
+  lat: 37.5534,
+  lng: 127.1346
+});
+
+onMounted(() => {
+  const loadKakaoMap = () => {
+    const script = document.createElement('script');
+    script.src = `http://dapi.kakao.com/v2/maps/sdk.js?appkey=76ad6b7f2886a2069792b36501302db7`;
+    
+    script.onload = () => {
+      isMapLoaded.value = true;
+    };
+
+    document.head.appendChild(script);
+  };
+
+  loadKakaoMap();
+});
+
 import PhotoBox from '~/components/PhotoBox.vue';
-import { ref } from 'vue';
 import img1 from '~/assets/images/01.webp';
 import img2 from '~/assets/images/02.webp';
 import img3 from '~/assets/images/03.webp';
@@ -125,3 +160,20 @@ const closePhotoBox = () => {
 </script>
 
 <style lang="scss" scoped src="~/assets/scss/main.scss"></style>
+
+<style scoped>
+.map {
+  position: relative;
+  width: 100%;
+  height: 400px;
+}
+
+.loading-map {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #f5f5f5;
+}
+</style>
