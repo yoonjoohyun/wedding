@@ -162,12 +162,6 @@ const handleWheel = (e) => {
 };
 
 const handleTouchStart = (e) => {
-    // Guestbook 컴포넌트나 그 하위 요소에서 발생한 이벤트인지 확인
-    const isFromGuestbook = e.target.closest('.guestbook-container');
-    if (isFromGuestbook) {
-        return; // Guestbook 내부에서는 터치 이벤트 무시
-    }
-
     touchStartY.value = e.touches[0].clientY;
 };
 
@@ -216,40 +210,42 @@ const closePhotoBox = () => {
 
 // head 메타 정보 설정
 useHead({
-  title: '♡ 주현이와 영경이의 결혼식에 초대합니다 ♡',
-  meta: [
-    {
-      property: 'og:type',
-      content: 'website'
-    },
-    {
-      property: 'og:title',
-      content: '♡ 주현이와 영경이의 결혼식에 초대합니다 ♡'
-    },
-    {
-      property: 'og:description',
-      content: '2023년 8월 23일 토요일 오후 1시 20분, 강동역 3번출구 KDW웨딩'
-    },
-    {
-      property: 'og:image',
-      // 실제 이미지 URL로 변경해주세요 (전체 URL 경로 필요)
-      content: 'https://wedding0823.netlify.app/_nuxt/maincover.CZwigx1R.webp'
-    },
-    {
-      property: 'og:url',
-      content: 'https://wedding0823.netlify.app'
-    }
-  ]
+    title: '♡ 주현이와 영경이의 결혼식에 초대합니다 ♡',
+    meta: [
+        {
+        property: 'og:type',
+        content: 'website'
+        },
+        {
+        property: 'og:title',
+        content: '♡ 주현이와 영경이의 결혼식에 초대합니다 ♡'
+        },
+        {
+        property: 'og:description',
+        content: '2023년 8월 23일 토요일 오후 1시 20분, 강동역 3번출구 KDW웨딩'
+        },
+        {
+        property: 'og:image',
+        // 실제 이미지 URL로 변경해주세요 (전체 URL 경로 필요)
+        content: 'https://wedding0823.netlify.app/_nuxt/maincover.CZwigx1R.webp'
+        },
+        {
+        property: 'og:url',
+        content: 'https://wedding0823.netlify.app'
+        }
+    ]
 })
 
+
+
 const copyLink = async (address) => {
-  try {
-    await navigator.clipboard.writeText(address);
-    alert('모바일 청첩장 링크가 복사되었습니다.');
-  } catch (err) {
-    console.error('링크 복사 실패:', err);
-    alert('링크 복사에 실패했습니다.');
-  }
+    try {
+        await navigator.clipboard.writeText(address);
+        alert('모바일 청첩장 링크가 복사되었습니다.');
+    } catch (err) {
+        console.error('링크 복사 실패:', err);
+        alert('링크 복사에 실패했습니다.');
+    }
 };
 </script>
 

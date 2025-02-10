@@ -354,6 +354,7 @@
     padding:2px;
     margin:0 auto;
     height:50px;
+    line-height:50px;
     text-align:center;
     font-size:1.6rem;
     font-weight:100;
@@ -364,7 +365,7 @@
     .footer_copyright:after{
         content:'';
         position:absolute;
-        top:-2px;
+        top:12px;
         left:50%;
         transform:translate(-50%,0);
         width:100%;
