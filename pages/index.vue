@@ -154,12 +154,6 @@ const changeSection = (direction) => {
 };
 
 const handleWheel = (e) => {
-    // Guestbook 컴포넌트나 그 하위 요소에서 발생한 이벤트인지 확인
-    const isFromGuestbook = e.target.closest('.guestbook-container');
-    if (isFromGuestbook) {
-        return; // Guestbook 내부에서는 섹션 전환을 하지 않음
-    }
-
     if (e.deltaY > 0) {
         changeSection('down');
     } else {
@@ -168,6 +162,12 @@ const handleWheel = (e) => {
 };
 
 const handleTouchStart = (e) => {
+    // Guestbook 컴포넌트나 그 하위 요소에서 발생한 이벤트인지 확인
+    const isFromGuestbook = e.target.closest('.guestbook-container');
+    if (isFromGuestbook) {
+        return; // Guestbook 내부에서는 터치 이벤트 무시
+    }
+
     touchStartY.value = e.touches[0].clientY;
 };
 
@@ -241,8 +241,6 @@ useHead({
     }
   ]
 })
-
-
 
 const copyLink = async (address) => {
   try {
