@@ -75,7 +75,21 @@
             찾아오시는 길
         </div>
         <div class="map">
-
+            <div class="kakaomap">
+                <img src="http://t1.daumcdn.net/roughmap/imgmap/954a38ecc459fc1f97b5a423807bec77e66b8d466f406c51125f87d31e4080d8">
+            </div>
+            <div class="map_navi">
+                <div class="left">
+                    <a class="kakao_logo" href="https://map.kakao.com" target="_blank"><img src="//t1.daumcdn.net/localimg/localimages/07/2018/pc/common/logo_kakaomap.png"></a>
+                </div>
+                <div class="right">
+                    <a target="_blank" href="https://map.kakao.com/?from=roughmap&amp;srcid=10124741&amp;confirmid=10124741&amp;q=KDW%EC%9B%A8%EB%94%A9&amp;rv=on">로드뷰</a>
+                    <a target="_blank" href="https://map.kakao.com/?from=roughmap&amp;eName=KDW%EC%9B%A8%EB%94%A9&amp;eX=529548.0&amp;eY=1120995.0">길찾기</a>
+                    <a target="_blank" href="https://map.kakao.com/?urlX=529548.0&amp;urlY=1120995.0&amp;itemId=10124741&amp;q=KDW%EC%9B%A8%EB%94%A9&amp;srcid=10124741&amp;map_type=TYPE_MAP&amp;from=roughmap">
+                        자세히
+                    </a> 
+                </div>
+            </div>
         </div>
         <div class="explain">
             <div class="vehicle">버스</div>
