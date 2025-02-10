@@ -1,6 +1,48 @@
 <template>
   <div class="guestbook">
-    <h2 class="guestbook-title">축하 인사</h2>
+    <h2 class="guestbook-title">소소한 마음 전달하기</h2>
+    <div class="dropdown">
+      <div class="detail_btn" @click="toggleDropdown(1)">
+        <span>신랑측 계좌번호 보기</span>
+        <span class="down_btn" :class="{ 'rotate': isOpen1 }"><i class="ri-arrow-down-s-fill"></i></span>
+      </div>
+      <div class="detail_content" :class="{ 'show': isOpen1 }">
+        <div class="con_box">
+          <span>윤종문 / 농협은행 / <a>110123456789</a></span>
+          <span class="copy_btn" @click="copyAccount('110123456789')">복사</span>
+        </div>
+        <div class="con_box">
+          <span>황인경 / 농협은행 / <a>110123456789</a></span>
+          <span class="copy_btn" @click="copyAccount('110123456789')">복사</span>
+        </div>
+        <div class="con_box">
+          <span>윤주현 / 신한은행 / <a>01051258018</a></span>
+          <span class="copy_btn" @click="copyAccount('01051258018')">복사</span>
+        </div>
+      </div>
+    </div>
+    <div class="dropdown">
+      <div class="detail_btn" @click="toggleDropdown(2)">
+        <span>신부측 계좌번호 보기</span>
+        <span class="down_btn" :class="{ 'rotate': isOpen2 }"><i class="ri-arrow-down-s-fill"></i></span>
+      </div>
+      <div class="detail_content" :class="{ 'show': isOpen2 }">
+        <div class="con_box">
+          <span>오연배 / 신한은행 / <a>110123456789</a></span>
+          <span class="copy_btn" @click="copyAccount('110123456789')">복사</span>
+        </div>
+        <div class="con_box">
+          <span>김은숙 / 신한은행 / <a>110123456789</a></span>
+          <span class="copy_btn" @click="copyAccount('110123456789')">복사</span>
+        </div>
+        <div class="con_box">
+          <span>오영경 / 신한은행 / <a>01084777856</a></span>
+          <span class="copy_btn" @click="copyAccount('01084777856')">복사</span>
+        </div>
+      </div>
+    </div>
+    
+    <h2 class="guestbook-title mt">축하 인사 전달하기</h2>
     
     <form @submit.prevent="submitMessage" class="guestbook-form">
       <input 
@@ -23,7 +65,7 @@
       <div v-for="msg in messages" :key="msg.id" class="message">
         <div class="message-header">
           <span class="message-name">{{ msg.name }}</span>
-          <span class="message-date">{{ formatDate(msg.created_at) }}</span>
+          <span style="display:none;" class="message-date">{{ formatDate(msg.created_at) }}</span>
         </div>
         <p class="message-content">{{ msg.message }}</p>
       </div>
@@ -45,6 +87,8 @@ const supabase = createClient(
 const name = ref('')
 const message = ref('')
 const messages = ref([])
+const isOpen1 = ref(false)
+const isOpen2 = ref(false)
 
 const formatDate = (dateStr) => {
   return new Date(dateStr).toLocaleDateString('ko-KR')
@@ -86,6 +130,24 @@ const submitMessage = async () => {
     alert('메시지 등록에 실패했습니다. 잠시 후 다시 시도해주세요.')
   }
 }
+
+const toggleDropdown = (num) => {
+  if (num === 1) {
+    isOpen1.value = !isOpen1.value
+  } else {
+    isOpen2.value = !isOpen2.value
+  }
+}
+
+const copyAccount = async (accountNumber) => {
+  try {
+    await navigator.clipboard.writeText(accountNumber);
+    alert('계좌번호가 복사되었습니다.');
+  } catch (err) {
+    console.error('계좌번호 복사 실패:', err);
+    alert('계좌번호 복사에 실패했습니다.');
+  }
+};
 
 onMounted(() => {
   fetchMessages()
