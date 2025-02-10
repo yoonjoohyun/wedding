@@ -101,9 +101,30 @@
                     <p class="yellow">마을 02번, 05번</p>
                 </div>
             </div>
+            <div class="explain">
+                <div class="vehicle">지하철</div>
+                <div class="detail">
+                    <p class="blue">파랑 340번, 364번, 240번</p>
+                    <p class="green">초록 1180번, 1124번</p>
+                    <p class="yellow">마을 02번, 05번</p>
+                </div>
+            </div>
         </div>
         <div class="content04 section">
             <Guestbook/>
+        </div>
+        <div class="content05 section">
+            <div class="footer_title">
+                꼭 오셔서 자리를 빛내주세요 :D
+            </div>
+            <div class="footer_image">
+                <img src="~/assets/images/maincover.webp"/>
+            </div>
+            <div class="footer_link" @click="copyLink('https://wedding0823.netlify.app/')">모바일 청첩장 공유하기<i class="ri-external-link-line"></i></div>
+            <div class="footer_copyright">
+                Copyright Crayon_000 All rights reserved.
+            </div>
+            <div class="footer_space"></div>
         </div>
     </div>
 </div>
@@ -114,7 +135,7 @@ import { useHead } from 'unhead';
 
 const currentSection = ref(0);
 const touchStartY = ref(0);
-const totalSections = 4;
+const totalSections = 5;
 let isAnimating = false;
 
 const changeSection = (direction) => {
@@ -214,6 +235,18 @@ useHead({
     }
   ]
 })
+
+
+
+const copyLink = async (address) => {
+  try {
+    await navigator.clipboard.writeText(address);
+    alert('모바일 청첩장 링크가 복사되었습니다.');
+  } catch (err) {
+    console.error('링크 복사 실패:', err);
+    alert('링크 복사에 실패했습니다.');
+  }
+};
 </script>
 
 <style lang="scss" scoped src="~/assets/scss/main.scss"></style>

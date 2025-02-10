@@ -193,12 +193,12 @@
 }
 
 
-
+//////////////////////  찾아오시는 길  /////////////////////////
 .content03{
     width:100%;
     display:flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     background-color:#fff;
 }
 .map_title{
@@ -299,6 +299,76 @@
     position:relative;
 }
 
+//////////////////////////////////마무리리/////////////////////////////////
+.content05{
+    width:100%;
+    background-color:#fff;
+    position:relative;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.footer_title{
+    width:100%;
+    height:50px;
+    line-height:50px;
+    text-align:center;
+    font-size:1.6rem;
+    font-weight:600;
+    margin-top:20px;
+}
+.footer_image{
+    width:100%;
+    height:500px;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+}
+    .footer_image img{
+        width:70%;
+    }
 
-
+.footer_link{
+    width:60%;
+    margin:0 auto;
+    height:40px;
+    line-height:40px;
+    text-align:center;
+    font-size:1.6rem;
+    font-weight:600;
+    margin-top:20px;
+    background-color:#111;
+    color:#fff;
+    border-radius:5px;
+}
+.ri-external-link-line{
+    margin-left:10px;
+    font-weight:100;
+}
+.footer_space{
+    width:100%;
+    height:40px;
+    background-color:fff;
+}
+.footer_copyright{
+    padding:2px;
+    margin:0 auto;
+    height:50px;
+    text-align:center;
+    font-size:1.6rem;
+    font-weight:100;
+    color:#999;
+    position:relative;
+    width:auto;
+}
+    .footer_copyright:after{
+        content:'';
+        position:absolute;
+        top:-2px;
+        left:50%;
+        transform:translate(-50%,0);
+        width:100%;
+        background-color:#cfcfcf;
+        height:1px;
+    }
 
