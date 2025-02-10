@@ -16,6 +16,7 @@
             <div class="people">오 연배 · 김 은숙 의 차녀 <span class="b">영경</span></div>
             <div class="date">2023년 8월 23일 토요일 오후 1시 20분</div>
             <div class="location">강동역 3번출구 KDW웨딩 (도보 1분)</div>
+            <div class="bottom_line"></div>
         </div>
         <div class="content02 section">
             <PhotoBox 
@@ -109,6 +110,8 @@
 </template>
 
 <script setup>
+import { useHead } from 'unhead';
+
 const currentSection = ref(0);
 const touchStartY = ref(0);
 const totalSections = 4;
@@ -154,7 +157,6 @@ const handleTouchEnd = (e) => {
     }
 };
 
-
 import PhotoBox from '~/components/PhotoBox.vue';
 import { ref } from 'vue';
 import img1 from '~/assets/images/01.webp';
@@ -184,6 +186,34 @@ const openPhotoBox = (index) => {
 const closePhotoBox = () => {
     isPhotoBoxOpen.value = false;
 };
+
+// head 메타 정보 설정
+useHead({
+  title: '♡ 주현이와 영경이의 결혼식에 초대합니다 ♡',
+  meta: [
+    {
+      property: 'og:type',
+      content: 'website'
+    },
+    {
+      property: 'og:title',
+      content: '♡ 주현이와 영경이의 결혼식에 초대합니다 ♡'
+    },
+    {
+      property: 'og:description',
+      content: '2023년 8월 23일 토요일 오후 1시 20분, 강동역 3번출구 KDW웨딩'
+    },
+    {
+      property: 'og:image',
+      // 실제 이미지 URL로 변경해주세요 (전체 URL 경로 필요)
+      content: 'https://wedding0823.netlify.app/_nuxt/maincover.CZwigx1R.webp'
+    },
+    {
+      property: 'og:url',
+      content: 'https://wedding0823.netlify.app'
+    }
+  ]
+})
 </script>
 
 <style lang="scss" scoped src="~/assets/scss/main.scss"></style>
