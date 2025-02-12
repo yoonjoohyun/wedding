@@ -61,13 +61,29 @@
       <button type="submit" class="guestbook-submit">등록하기</button>
     </form>
 
-    <div class="messages">
+    <div class="messages" @click="openModal">
       <div v-for="msg in messages" :key="msg.id" class="message">
         <div class="message-header">
           <span class="message-name">{{ msg.name }}</span>
           <span style="display:none;" class="message-date">{{ formatDate(msg.created_at) }}</span>
         </div>
         <p class="message-content">{{ msg.message }}</p>
+      </div>
+    </div>
+    <!-- 메시지 모달 -->
+    <div v-if="props.isModalOpen" class="message-modal" @click="closeModal">
+      <div class="modal-content" @click.stop>
+        <button class="close-button" @click="closeModal">
+          <i class="ri-close-line"></i>
+        </button>
+        <div class="modal-messages">
+          <div v-for="msg in messages" :key="msg.id" class="modal-message">
+            <div class="message-header">
+              <span class="message-name">{{ msg.name }}</span>
+            </div>
+            <p class="message-content">{{ msg.message }}</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -152,6 +168,27 @@ const copyAccount = async (accountNumber) => {
 onMounted(() => {
   fetchMessages()
 })
+
+const props = defineProps({
+  isModalOpen: {
+    type: Boolean,
+    required: true
+  }
+});
+
+const emit = defineEmits(['update:isModalOpen']);
+
+const openModal = () => {
+  emit('update:isModalOpen', true);
+  document.body.style.overflow = 'hidden';
+};
+
+const closeModal = () => {
+  emit('update:isModalOpen', false);
+  document.body.style.overflow = 'auto';
+};
+
+
 </script>
 
 <style lang="scss" scoped src="@/assets/scss/guestbook.scss"></style> 

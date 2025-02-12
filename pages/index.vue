@@ -1,7 +1,13 @@
 <template>
 <div class="wrap" @wheel="handleWheel" @touchstart="handleTouchStart" @touchend="handleTouchEnd">
+    <audio ref="audioPlayer" loop>
+        <source src="~/assets/music/bgm.mp3" type="audio/mp3">
+    </audio>
     <div class="sections" :style="{ transform: `translateY(-${currentSection * 100}%)` }">
         <div class="content section">
+            <a class="music_btn" @click="togglemusic" :class="{ 'rotate': isPlaying }">
+                <i :class="isPlaying ? 'ri-volume-up-fill' : 'ri-volume-mute-fill'"></i>
+            </a>
             <div class="topline"><p>♡ 주현이와 영경이의 결혼식에 초대합니다 ♡</p></div>
             <div class="title_box">
                 <div class="title">YOU & ME 10 YEARS<br>WE TOGETHER 100 YEARS</div>
@@ -73,45 +79,67 @@
             <div class="empty"></div>
         </div>
         <div class="content03 section">
-            <div class="map_title">
-                찾아오시는 길
-            </div>
             <div class="map">
+                <div class="map_title">
+                    찾아오시는 길
+                </div>
                 <div class="kakaomap">
-                    <img src="http://t1.daumcdn.net/roughmap/imgmap/954a38ecc459fc1f97b5a423807bec77e66b8d466f406c51125f87d31e4080d8">
-                </div>
-                <div class="map_navi">
-                    <div class="left">
-                        <a class="kakao_logo" href="https://map.kakao.com" target="_blank"><img src="//t1.daumcdn.net/localimg/localimages/07/2018/pc/common/logo_kakaomap.png"></a>
-                    </div>
-                    <div class="right">
-                        <a target="_blank" href="https://map.kakao.com/?from=roughmap&amp;srcid=10124741&amp;confirmid=10124741&amp;q=KDW%EC%9B%A8%EB%94%A9&amp;rv=on">로드뷰</a>
-                        <a target="_blank" href="https://map.kakao.com/?from=roughmap&amp;eName=KDW%EC%9B%A8%EB%94%A9&amp;eX=529548.0&amp;eY=1120995.0">길찾기</a>
-                        <a target="_blank" href="https://map.kakao.com/?urlX=529548.0&amp;urlY=1120995.0&amp;itemId=10124741&amp;q=KDW%EC%9B%A8%EB%94%A9&amp;srcid=10124741&amp;map_type=TYPE_MAP&amp;from=roughmap">
-                            자세히
-                        </a> 
-                    </div>
+                    <div id="daumRoughmapContainer1739338499547" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+                </div> 
+            </div>
+            <div class="explain">
+                <div class="vehicle"><i class="ri-subway-line icon"></i> 지하철 이용 시</div>
+                <div class="detail boxing">
+                    <p class="subtxt"><span class="strongtxt">5호선 강동역</span> 하차 3번출구 도보 1분</p>
                 </div>
             </div>
             <div class="explain">
-                <div class="vehicle">버스</div>
-                <div class="detail">
-                    <p class="blue">파랑 340번, 364번, 240번</p>
-                    <p class="green">초록 1180번, 1124번</p>
-                    <p class="yellow">마을 02번, 05번</p>
+                <div class="vehicle"><i class="ri-bus-2-line icon"></i> 버스 이용 시 <span class="subtxt">: 강동역 하차</span></div>
+                <div class="detail boxing">
+                    <p class="txtbox">
+                        <span class="boldtxt">간선 버스 : </span>
+                        <span class="blue">130</span>
+                        <span class="blue">341</span>
+                        <span class="blue">342</span>
+                        <span class="blue">370</span>
+                    </p>
+                    <p class="txtbox">
+                        <span class="boldtxt">일반 버스 : </span>
+                        <span class="green">3214</span>
+                        <span class="green">3316</span>
+                    </p>
+                    <p class="txtbox">
+                        <span class="boldtxt">지선 버스 : </span>
+                        <span class="green">1-4</span>
+                        <span class="green">23</span>
+                        <span class="green">30-3</span>
+                        <span class="green">112-1</span>
+                        <span class="green">112-5</span>
+                    </p>
+                    <p class="txtbox">
+                        <span class="boldtxt">직행 버스 : </span>
+                        <span class="red">1113</span>
+                        <span class="red">1113-1</span>
+                    </p>
+                    <p class="txtbox">
+                        <span class="boldtxt">공항 버스 : </span>
+                        <span class="purple">6200</span>
+                    </p>
                 </div>
             </div>
             <div class="explain">
-                <div class="vehicle">지하철</div>
-                <div class="detail">
-                    <p class="blue">파랑 340번, 364번, 240번</p>
-                    <p class="green">초록 1180번, 1124번</p>
-                    <p class="yellow">마을 02번, 05번</p>
+                <div class="vehicle"><i class="ri-parking-box-line icon"></i> 주차장 이용 시</div>
+                <div class="detail boxing gap">
+                    <p class="subtxt">건물 내 무료 주차장 (지하 1층 ~ 지하 3층)
+                    <br><span class="strongtxt">(1시간 30분 무료)</span></p>
+                    <p style="margin-top:5px;" class="subtxt">유료 옥외 주차장 및 지하철 환승 주차장 이용</p>
                 </div>
             </div>
         </div>
         <div class="content04 section">
-            <Guestbook/>
+            <Guestbook 
+                v-model:isModalOpen="isModalOpen"
+            />
         </div>
         <div class="content05 section">
             <div class="footer_title">
@@ -131,12 +159,52 @@
 </template>
 
 <script setup>
-import { useHead } from 'unhead';
-
+const audioPlayer = ref(null);
+const isPlaying = ref(false);
 const currentSection = ref(0);
 const touchStartY = ref(0);
+const isModalOpen = ref(false);
 const totalSections = 5;
 let isAnimating = false;
+
+const togglemusic = () => {
+    isPlaying.value = !isPlaying.value;
+    
+    if (isPlaying.value) {
+        audioPlayer.value.play();
+    } else {
+        audioPlayer.value.pause();
+    }
+};
+
+useHead({
+    meta: [
+        {
+        charset: 'utf-8'
+        },
+        {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1'
+        }
+    ],
+    script: [
+        {
+        src: 'https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js',
+        charset: 'UTF-8'
+        }
+    ]
+});
+onMounted(() => {
+    // 기본 음량을 0.3(30%)로 설정
+    audioPlayer.value.volume = 0.2;
+    
+    new daum.roughmap.Lander({
+        "timestamp" : "1739338499547",
+        "key" : "2nzsw",
+    }).render();
+});
+
+import { useHead } from 'unhead';
 
 const changeSection = (direction) => {
     if (isAnimating) return;
@@ -154,6 +222,9 @@ const changeSection = (direction) => {
 };
 
 const handleWheel = (e) => {
+    // 모달이 열려있으면 슬라이드 효과 중지
+    if (isModalOpen.value) return;
+    
     if (e.deltaY > 0) {
         changeSection('down');
     } else {
@@ -162,14 +233,20 @@ const handleWheel = (e) => {
 };
 
 const handleTouchStart = (e) => {
+    // 모달이 열려있으면 터치 이벤트 무시
+    if (isModalOpen.value) return;
+    
     touchStartY.value = e.touches[0].clientY;
 };
 
 const handleTouchEnd = (e) => {
+    // 모달이 열려있으면 터치 이벤트 무시
+    if (isModalOpen.value) return;
+    
     const touchEndY = e.changedTouches[0].clientY;
     const diff = touchStartY.value - touchEndY;
     
-    if (Math.abs(diff) > 50) { // 50px 이상 스와이프했을 때만 동작
+    if (Math.abs(diff) > 50) {
         if (diff > 0) {
             changeSection('down');
         } else {
@@ -236,8 +313,6 @@ useHead({
     ]
 })
 
-
-
 const copyLink = async (address) => {
     try {
         await navigator.clipboard.writeText(address);
@@ -247,6 +322,8 @@ const copyLink = async (address) => {
         alert('링크 복사에 실패했습니다.');
     }
 };
+
+
 </script>
 
 <style lang="scss" scoped src="~/assets/scss/main.scss"></style>

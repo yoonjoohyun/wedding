@@ -38,6 +38,19 @@
     align-items:center;
     justify-content:center;
 }
+.music_btn{
+    color:#fff;
+    font-weight:100;
+    font-size:2rem;
+    display:block;
+    height:4%;
+    position:fixed;
+    top:0;
+    right:0;
+    padding-right:10px;
+    padding-top:2px;
+    cursor:pointer;
+}
 .title_box{
     width:100%;
     height:16%;
@@ -219,7 +232,6 @@
     width:100%;
     display:flex;
     flex-direction: column;
-    justify-content: space-evenly;
     background-color:#fff;
 }
 .map_title{
@@ -230,86 +242,108 @@
     text-align:center;
     line-height:3rem;
     padding:10px 0 10px 0;
+    background-color:#fff;
 }
 .map{
     width:100%;
     height:auto;
-    background-color:#111;
-    margin-bottom:10px;
+    margin-bottom:50px;
+}
+.root_daum_roughmap{
+    width: 100%;
+    height:auto;
 }
     .kakaomap{
         width:100%;
-        height:auto;
+        height:300px;
+        background-color:rgba(255, 166, 0, 0.164);
     }
         .kakaomap img{
             width:100%;
             height:auto;
         }
-        .map_detail{
-            color:#333;
-            text-align:center;
-            width:100%;
-            height:50px;
-            line-height:46px;
-            display:block;
-            font-size:1.6rem;
-        }
-
-    .map_navi{
-        width:100%;
-        height:50px;
-        background-color:#111;
-        margin-top:-3px;
-        display:flex;
-        align-items:center;
-        justify-content:space-between;
-        color:#fff;
-        font-weight:600;
-        font-size:1.4rem;
-        padding:0 15px 0 10px;
-    }
-        .left{
-            padding-top:4px;
-        }
-            .kakao_logo{
-                filter:invert(1);
-            }
-                .kakao_logo img{
-                    width:100px;
-                    height:auto;
-                }
-        
-        .right{
-            display:flex;
-        }
-            .right a{
-                display:block;
-                border-left:2px solid #3f3f3f;
-                padding:0 10px 0 10px;
-            }
-            .right a:nth-child(1){
-                border:none;
-            }
-
-
 
 .explain{
     width:100%;
     height:auto;
+    margin-bottom:20px;
 }
 .vehicle{
     width:100%;
     height:auto;
-    font-size:2.2rem;
+    font-size:1.8rem;
     padding-left:2%;
-    font-weight:500;
+    font-weight:600;
+    margin-bottom:5px;
 }
 .detail{
-    padding-top:6px;
-    padding-left:4%;
-    font-size:1.8rem;
+    font-size:1.6rem;
 }
+    .detail p{
+        
+    }
 
+.subtxt{
+    color:#555;
+    font-weight:600;
+    font-size:1.6rem;
+}
+.gap{
+    padding-bottom:40px;
+}
+.boxing{
+    background-color:#f5f5f5;
+    border-radius:5px;
+    margin:0 6px;
+    padding:10px 0 10px 15px;
+}
+.boldtxt{
+    font-weight:600;
+    color:#555;
+}
+.strongtxt{
+    color:#111;
+}
+.txtbox{
+    height:32px;
+    line-height:30px;
+}
+.blue{
+    background-color:blue;
+    font-weight:600;
+    border-radius:5px;
+    color:#fff;
+    padding:2px 6px 2px 6px;
+    margin-left:5px;
+}
+.red{
+    background-color:red;
+    font-weight:600;
+    border-radius:5px;
+    color:#fff;
+    padding:2px 6px 2px 6px;
+    margin-left:5px;
+}
+.green{
+    background-color:green;
+    font-weight:600;
+    border-radius:5px;
+    color:#fff;
+    padding:2px 6px 2px 6px;
+    margin-left:5px;
+}
+.purple{
+    background-color:purple;
+    font-weight:600;
+    border-radius:5px;
+    color:#fff;
+    padding:2px 6px 2px 6px;
+    margin-left:5px;
+}
+.icon{
+    font-size:2rem;
+    font-weight:300;
+}
 
 
 //////////////////////////////////축하 인사/////////////////////////////////

@@ -64,6 +64,7 @@
   height:400px;
   padding-right:8px;
   overflow-y:scroll;
+  cursor: pointer;
   // 스크롤바 스타일
   &::-webkit-scrollbar {
     width: 6px;
@@ -172,6 +173,96 @@
 }
 
 
+
+
+.message-modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  
+
+  .modal-content {
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 80vh;
+    position: relative;
+
+    .close-button {
+      position: absolute;
+      top: -30px;
+      right: 8px;
+      background: none;
+      border: none;
+      font-size: 34px;
+      cursor: pointer;
+      padding: 5px;
+      color:#fff;
+    }
+
+    .modal-messages {
+      overflow-y: auto;
+      max-height: calc(80vh - 60px);
+      // 스크롤바 스타일
+      &::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      &::-webkit-scrollbar-track {
+        background-color: #ffffff80;
+        border-radius:5px;
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: #ffffffad;
+        border-radius:5px;
+      }
+
+      .modal-message {
+        padding: 15px 0;
+        background-color:#ffffffce;
+        margin-bottom:20px;
+        border-radius:5px;
+        padding:10px 10px 10px 10px;
+        margin-right:10px;
+        margin-left:4px;
+        backdrop-filter:blur(3px);
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        .message-header {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 8px;
+
+          .message-name {
+            font-weight: bold;
+          }
+
+          .message-date {
+            color: #666;
+            font-size: 0.9em;
+            display: inline !important;
+          }
+        }
+
+        .message-content {
+          line-height: 1.5;
+          word-break: break-all;
+        }
+      }
+    }
+  }
+}
 
 
 
