@@ -89,12 +89,16 @@
             </div>
             <div class="explain">
                 <div class="vehicle"><i class="ri-subway-line icon"></i> 지하철 이용 시</div>
-                <div class="detail boxing">
+                <div class="boxing">
                     <p class="subtxt"><span class="strongtxt">5호선 강동역</span> 하차 3번출구 도보 1분</p>
                 </div>
             </div>
             <div class="explain">
-                <div class="vehicle"><i class="ri-bus-2-line icon"></i> 버스 이용 시 <span class="subtxt">: 강동역 하차</span></div>
+                <div class="vehicle" @click="toggledetail">
+                    <i class="ri-bus-2-line icon"></i> 버스 이용 시 
+                    <span class="subtxt">: 강동역 하차</span>
+                    <span class="detail_btn">더보기</span>
+                </div>
                 <div class="detail boxing">
                     <p class="txtbox">
                         <span class="boldtxt">간선 버스 : </span>
@@ -129,7 +133,7 @@
             </div>
             <div class="explain">
                 <div class="vehicle"><i class="ri-parking-box-line icon"></i> 주차장 이용 시</div>
-                <div class="detail boxing gap">
+                <div class="boxing gap">
                     <p class="subtxt">건물 내 무료 주차장 (지하 1층 ~ 지하 3층)
                     <br><span class="strongtxt">(1시간 30분 무료)</span></p>
                     <p style="margin-top:5px;" class="subtxt">유료 옥외 주차장 및 지하철 환승 주차장 이용</p>
@@ -175,6 +179,16 @@ const togglemusic = () => {
     } else {
         audioPlayer.value.pause();
     }
+}
+const toggledetail = () => {
+    console.log('toggledetail clicked'); // 디버깅용 로그
+    const detailElement = document.querySelector('.detail');
+    if (detailElement) {
+        console.log('detail element found'); // 요소를 찾았는지 확인
+        detailElement.classList.toggle('detailopen');
+    } else {
+        console.log('detail element not found'); // 요소를 찾지 못했을 경우
+    }
 };
 
 useHead({
@@ -196,7 +210,7 @@ useHead({
 });
 onMounted(() => {
     // 기본 음량을 0.3(30%)로 설정
-    audioPlayer.value.volume = 0.2;
+    audioPlayer.value.volume = 0.4;
     
     new daum.roughmap.Lander({
         "timestamp" : "1739338499547",

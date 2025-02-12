@@ -237,10 +237,10 @@
 .map_title{
     width:100%;
     height:auto;
-    font-size:2rem;
+    font-size:1.6rem;
     font-weight:600;
     text-align:center;
-    line-height:3rem;
+    line-height:1.6rem;
     padding:10px 0 10px 0;
     background-color:#fff;
 }
@@ -277,12 +277,22 @@
     margin-bottom:5px;
 }
 .detail{
-    
+    max-height:50px;
+    overflow:hidden;
+    transition: max-height 0.3s ease; // 트랜지션 추가
 }
-    .detail p{
-        
+    .detailopen{
+        max-height:200px;
     }
-
+.detail_btn{
+    color:#999;
+    font-weight:600;
+    font-size:1.4rem;
+    float:right;
+    padding-right:10px;
+    margin-top:5px;
+    cursor:pointer;
+}
 .subtxt{
     color:#555;
     font-weight:600;
