@@ -182,6 +182,7 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter:blur(7px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -199,7 +200,7 @@
     .close-button {
       position: absolute;
       top: -30px;
-      right: 8px;
+      right: 6px;
       background: none;
       border: none;
       font-size: 34px;
@@ -233,7 +234,6 @@
         padding:10px 10px 10px 10px;
         margin-right:10px;
         margin-left:4px;
-        backdrop-filter:blur(3px);
 
         &:last-child {
           border-bottom: none;

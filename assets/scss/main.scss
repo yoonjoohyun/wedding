@@ -100,12 +100,12 @@
 
 .maincover{
     width:100%;
-    height:52%;
+    height:48%;
     display:flex;
     justify-content:center;
     padding:30px 0 36px 0;
     @media(height <= 700px){
-        height:48%;
+        height:44%;
     }
 }
     .maincover img{
@@ -266,7 +266,7 @@
 .explain{
     width:100%;
     height:auto;
-    margin-bottom:20px;
+    margin-bottom:14px;
 }
 .vehicle{
     width:100%;
@@ -277,7 +277,7 @@
     margin-bottom:5px;
 }
 .detail{
-    font-size:1.6rem;
+    
 }
     .detail p{
         
@@ -286,7 +286,7 @@
 .subtxt{
     color:#555;
     font-weight:600;
-    font-size:1.6rem;
+    font-size:1.4rem;
 }
 .gap{
     padding-bottom:40px;
@@ -295,7 +295,7 @@
     background-color:#f5f5f5;
     border-radius:5px;
     margin:0 6px;
-    padding:10px 0 10px 15px;
+    padding:6px 0 6px 15px;
 }
 .boldtxt{
     font-weight:600;
@@ -305,15 +305,16 @@
     color:#111;
 }
 .txtbox{
-    height:32px;
-    line-height:30px;
+    height:28px;
+    line-height:28px;
+    font-size:1.4rem;
 }
 .blue{
     background-color:blue;
     font-weight:600;
     border-radius:5px;
     color:#fff;
-    padding:2px 6px 2px 6px;
+    padding:1px 5px 1px 5px;
     margin-left:5px;
 }
 .red{
@@ -321,7 +322,7 @@
     font-weight:600;
     border-radius:5px;
     color:#fff;
-    padding:2px 6px 2px 6px;
+    padding:1px 5px 1px 5px;
     margin-left:5px;
 }
 .green{
@@ -329,7 +330,7 @@
     font-weight:600;
     border-radius:5px;
     color:#fff;
-    padding:2px 6px 2px 6px;
+    padding:1px 5px 1px 5px;
     margin-left:5px;
 }
 .purple{
@@ -337,7 +338,7 @@
     font-weight:600;
     border-radius:5px;
     color:#fff;
-    padding:2px 6px 2px 6px;
+    padding:1px 5px 1px 5px;
     margin-left:5px;
 }
 .icon{
