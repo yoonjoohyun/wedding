@@ -8,15 +8,15 @@
       </div>
       <div class="detail_content" :class="{ 'show': isOpen1 }">
         <div class="con_box">
-          <span>윤종문 / 농협은행 / <a>110123456789</a></span>
+          <span>ㅇㅇㅇ / 농협은행 / <a>110123456789</a></span>
           <span class="copy_btn" @click="copyAccount('110123456789')">복사</span>
         </div>
         <div class="con_box">
-          <span>황인경 / 농협은행 / <a>110123456789</a></span>
+          <span>ㅇㅇㅇ / 농협은행 / <a>220123456789</a></span>
           <span class="copy_btn" @click="copyAccount('110123456789')">복사</span>
         </div>
         <div class="con_box">
-          <span>윤주현 / 신한은행 / <a>01051258018</a></span>
+          <span>ㅇㅇㅇ / 신한은행 / <a>330123456789</a></span>
           <span class="copy_btn" @click="copyAccount('01051258018')">복사</span>
         </div>
       </div>
@@ -28,15 +28,15 @@
       </div>
       <div class="detail_content" :class="{ 'show': isOpen2 }">
         <div class="con_box">
-          <span>오연배 / 신한은행 / <a>110123456789</a></span>
+          <span>ㅇㅇㅇ / 신한은행 / <a>440123456789</a></span>
           <span class="copy_btn" @click="copyAccount('110123456789')">복사</span>
         </div>
         <div class="con_box">
-          <span>김은숙 / 신한은행 / <a>110123456789</a></span>
+          <span>ㅇㅇㅇ / 신한은행 / <a>550123456789</a></span>
           <span class="copy_btn" @click="copyAccount('110123456789')">복사</span>
         </div>
         <div class="con_box">
-          <span>오영경 / 신한은행 / <a>01084777856</a></span>
+          <span>ㅇㅇㅇ / 신한은행 / <a>660123456789</a></span>
           <span class="copy_btn" @click="copyAccount('01084777856')">복사</span>
         </div>
       </div>

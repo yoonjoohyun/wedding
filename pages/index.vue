@@ -8,20 +8,22 @@
     </div>
     <div class="sections" :style="{ transform: `translateY(-${currentSection * 100}%)` }">
         <div class="content section">
-            <div class="topline"><p>♡ 주현이와 영경이의 결혼식에 초대합니다 ♡</p></div>
+            <div class="topline"><p>♡ ㅇㅇ와 ㅇㅇ의 결혼식에 초대합니다 ♡</p></div>
             <div class="title_box">
-                <div class="title">YOU & ME 10 YEARS<br>WE TOGETHER 100 YEARS</div>
+                <div class="title">WEDDING TITLE<br>WEDDING SUB TITLE</div>
             </div>
-            <div class="subtitle"><p class="subtitle_txt">너와 내가 서로 마주보고 행복했던 지난 10년처럼
-                <br>이제는 우리 함께 나란히 서서 앞으로 100년 더 행복하자</p>
+            <div class="subtitle">
+                <p class="subtitle_txt">
+                    앞으로 함께할 나날들을 위해 다짐하거나 서로를 위한 말 또는는 초대하실 하객들을 위한 인사의 말씀을 적어주세요.
+                </p>
             </div>
             <div class="maincover">
                 <img src="~/assets/images/maincover.webp" alt="maincover">
             </div>
-            <div class="people">윤 종문 · 황 인경 의 차남 <span class="b">주현</span></div>
-            <div class="people">오 연배 · 김 은숙 의 차녀 <span class="b">영경</span></div>
-            <div class="date">2023년 8월 23일 토요일 오후 1시 20분</div>
-            <div class="location">강동역 3번출구 KDW웨딩 (도보 1분)</div>
+            <div class="people">ㅇ ㅇㅇ · ㅇ ㅇㅇ 의 차남 <span class="b">ㅇㅇ</span></div>
+            <div class="people">ㅇ ㅇㅇ · ㅇ ㅇㅇ 의 차녀 <span class="b">ㅇㅇ</span></div>
+            <div class="date">0000년 0월 00일 ㅇㅇ일 오후 0시 00분</div>
+            <div class="location">00역 0번출구 000 (도보 0분)</div>
             <div class="bottom_line"></div>
         </div>
         <div class="content02 section">
@@ -84,50 +86,50 @@
                     찾아오시는 길
                 </div>
                 <div class="kakaomap">
-                    <div id="daumRoughmapContainer1739338499547" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+                    <div id="daumRoughmapContainer1739428232729" class="root_daum_roughmap root_daum_roughmap_landing"></div>
                 </div> 
             </div>
             <div class="explain">
                 <div class="vehicle"><i class="ri-subway-line icon"></i> 지하철 이용 시</div>
                 <div class="boxing">
-                    <p class="subtxt"><span class="strongtxt">5호선 강동역</span> 하차 3번출구 도보 1분</p>
+                    <p class="subtxt"><span class="strongtxt">0호선 ㅇㅇ역</span> 하차 0번출구 도보 0분</p>
                 </div>
             </div>
             <div class="explain">
                 <div class="vehicle" @click="toggledetail">
                     <i class="ri-bus-2-line icon"></i> 버스 이용 시 
-                    <span class="subtxt">: 강동역 하차</span>
+                    <span class="subtxt">: ㅇㅇ역 하차</span>
                     <span class="detail_btn">더보기</span>
                 </div>
                 <div class="detail boxing">
                     <p class="txtbox">
                         <span class="boldtxt">간선 버스 : </span>
-                        <span class="blue">130</span>
-                        <span class="blue">341</span>
-                        <span class="blue">342</span>
-                        <span class="blue">370</span>
+                        <span class="blue">230</span>
+                        <span class="blue">441</span>
+                        <span class="blue">442</span>
+                        <span class="blue">470</span>
                     </p>
                     <p class="txtbox">
                         <span class="boldtxt">일반 버스 : </span>
-                        <span class="green">3214</span>
-                        <span class="green">3316</span>
+                        <span class="green">2214</span>
+                        <span class="green">2316</span>
                     </p>
                     <p class="txtbox">
                         <span class="boldtxt">지선 버스 : </span>
-                        <span class="green">1-4</span>
-                        <span class="green">23</span>
-                        <span class="green">30-3</span>
-                        <span class="green">112-1</span>
-                        <span class="green">112-5</span>
+                        <span class="green">2-4</span>
+                        <span class="green">33</span>
+                        <span class="green">40-3</span>
+                        <span class="green">212-1</span>
+                        <span class="green">212-5</span>
                     </p>
                     <p class="txtbox">
                         <span class="boldtxt">직행 버스 : </span>
-                        <span class="red">1113</span>
-                        <span class="red">1113-1</span>
+                        <span class="red">2113</span>
+                        <span class="red">2113-1</span>
                     </p>
                     <p class="txtbox">
                         <span class="boldtxt">공항 버스 : </span>
-                        <span class="purple">6200</span>
+                        <span class="purple">7200</span>
                     </p>
                 </div>
             </div>
@@ -153,10 +155,10 @@
                 <img src="~/assets/images/maincover.webp"/>
             </div>
             <div class="footer_link" @click="copyLink('https://wedding0823.netlify.app/')">모바일 청첩장 공유하기<i class="ri-external-link-line"></i></div>
+            <div class="footer_space"></div>
             <div class="footer_copyright">
                 Copyright Crayon_000 All rights reserved.
             </div>
-            <div class="footer_space"></div>
         </div>
     </div>
 </div>
@@ -211,8 +213,8 @@ onMounted(() => {
     });
 
     new daum.roughmap.Lander({
-        "timestamp" : "1739338499547",
-        "key" : "2nzsw",
+        "timestamp" : "1739428232729",
+        "key" : "2n2cu",
     }).render();
 });
 
@@ -336,11 +338,11 @@ useHead({
         },
         {
         property: 'og:title',
-        content: '♡ 주현이와 영경이의 결혼식에 초대합니다 ♡'
+        content: '♡ ㅇㅇ이와 ㅇㅇ의 결혼식에 초대합니다 ♡'
         },
         {
         property: 'og:description',
-        content: '2023년 8월 23일 토요일 오후 1시 20분, 강동역 3번출구 KDW웨딩'
+        content: '0000년 0월 00일 토요일 오후 0시 00분, ㅇㅇ역 0번출구 ㅇㅇ'
         },
         {
         property: 'og:image',
