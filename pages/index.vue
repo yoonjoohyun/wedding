@@ -3,11 +3,11 @@
     <audio ref="audioPlayer" loop>
         <source src="~/assets/music/bgm.mp3" type="audio/mp3">
     </audio>
+    <div class="music_btn" @click="togglemusic" :class="{ 'rotate': isPlaying }">
+        <i :class="isPlaying ? 'ri-volume-up-fill' : 'ri-volume-mute-fill'"></i>
+    </div>
     <div class="sections" :style="{ transform: `translateY(-${currentSection * 100}%)` }">
         <div class="content section">
-            <a class="music_btn" @click="togglemusic" :class="{ 'rotate': isPlaying }">
-                <i :class="isPlaying ? 'ri-volume-up-fill' : 'ri-volume-mute-fill'"></i>
-            </a>
             <div class="topline"><p>♡ 주현이와 영경이의 결혼식에 초대합니다 ♡</p></div>
             <div class="title_box">
                 <div class="title">YOU & ME 10 YEARS<br>WE TOGETHER 100 YEARS</div>
@@ -165,11 +165,13 @@
 <script setup>
 const audioPlayer = ref(null);
 const isPlaying = ref(false);
+const hasInteracted = ref(false);  // 사용자 상호작용 여부를 추적하는 새로운 ref
 const currentSection = ref(0);
 const touchStartY = ref(0);
 const isModalOpen = ref(false);
 const totalSections = 5;
 let isAnimating = false;
+
 
 const togglemusic = () => {
     isPlaying.value = !isPlaying.value;
@@ -180,6 +182,40 @@ const togglemusic = () => {
         audioPlayer.value.pause();
     }
 }
+
+onMounted(() => {
+    // 기본 음량을 0.4(40%)로 설정
+    audioPlayer.value.volume = 0.4;
+    
+    // 사용자의 첫 상호작용을 감지하는 이벤트 리스너
+    const startAudio = () => {
+        if (!hasInteracted.value) {
+            audioPlayer.value.currentTime = 4;  // 최초 재생 시에만 2초 지점으로 설정
+            audioPlayer.value.play().then(() => {
+                isPlaying.value = true;
+                hasInteracted.value = true;
+            }).catch(error => {
+                console.log('Playback failed:', error);
+                isPlaying.value = false;
+            });
+            // 이벤트 리스너 제거
+            ['click', 'touchstart'].forEach(event => {
+                document.removeEventListener(event, startAudio);
+            });
+        }
+    };
+
+    // 문서 전체에 이벤트 리스너 추가
+    ['click', 'touchstart'].forEach(event => {
+        document.addEventListener(event, startAudio);
+    });
+
+    new daum.roughmap.Lander({
+        "timestamp" : "1739338499547",
+        "key" : "2nzsw",
+    }).render();
+});
+
 const toggledetail = () => {
     console.log('toggledetail clicked'); // 디버깅용 로그
     const detailElement = document.querySelector('.detail');
@@ -207,15 +243,6 @@ useHead({
         charset: 'UTF-8'
         }
     ]
-});
-onMounted(() => {
-    // 기본 음량을 0.3(30%)로 설정
-    audioPlayer.value.volume = 0.4;
-    
-    new daum.roughmap.Lander({
-        "timestamp" : "1739338499547",
-        "key" : "2nzsw",
-    }).render();
 });
 
 import { useHead } from 'unhead';
