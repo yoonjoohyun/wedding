@@ -45,35 +45,35 @@
             </div>
             <div class="photo_box">
                 <div class="photo" @click="openPhotoBox(3)">
-                    <img src="~/assets/images/04.webp"/>
-                </div>
-                <div class="photo" @click="openPhotoBox(4)">
                     <img src="~/assets/images/05.webp"/>
                 </div>
-                <div class="photo" @click="openPhotoBox(5)">
+                <div class="photo" @click="openPhotoBox(4)">
                     <img src="~/assets/images/06.webp"/>
+                </div>
+                <div class="photo" @click="openPhotoBox(5)">
+                    <img src="~/assets/images/07.webp"/>
                 </div>
             </div>
             <div class="photo_box">
                 <div class="photo" @click="openPhotoBox(6)">
-                    <img src="~/assets/images/07.webp"/>
-                </div>
-                <div class="photo" @click="openPhotoBox(7)">
                     <img src="~/assets/images/08.webp"/>
                 </div>
-                <div class="photo" @click="openPhotoBox(8)">
+                <div class="photo" @click="openPhotoBox(7)">
                     <img src="~/assets/images/09.webp"/>
+                </div>
+                <div class="photo" @click="openPhotoBox(8)">
+                    <img src="~/assets/images/11.webp"/>
                 </div>
             </div>
             <div class="photo_box">
                 <div class="photo" @click="openPhotoBox(9)">
-                    <img src="~/assets/images/10.webp"/>
+                    <img src="~/assets/images/13.webp"/>
                 </div>
                 <div class="photo" @click="openPhotoBox(10)">
-                    <img src="~/assets/images/11.webp"/>
+                    <img src="~/assets/images/14.webp"/>
                 </div>
                 <div class="photo" @click="openPhotoBox(11)">
-                    <img src="~/assets/images/12.webp"/>
+                    <img src="~/assets/images/16.webp"/>
                 </div>
             </div>
             <div class="empty"></div>
@@ -150,7 +150,7 @@
                 꼭 오셔서 자리를 빛내주세요 :D
             </div>
             <div class="footer_image">
-                <img src="~/assets/images/maincover.webp"/>
+                <img src="~/assets/images/maincover_0515.webp"/>
             </div>
             <div class="footer_link" @click="copyLink('https://wedding0823.netlify.app/')">모바일 청첩장 공유하기<i class="ri-external-link-line"></i></div>
             <div class="footer_copyright">
@@ -301,15 +301,15 @@ import { ref } from 'vue';
 import img1 from '~/assets/images/01.webp';
 import img2 from '~/assets/images/02.webp';
 import img3 from '~/assets/images/03.webp';
-import img4 from '~/assets/images/04.webp';
-import img5 from '~/assets/images/05.webp';
-import img6 from '~/assets/images/06.webp';
-import img7 from '~/assets/images/07.webp';
-import img8 from '~/assets/images/08.webp';
-import img9 from '~/assets/images/09.webp';
-import img10 from '~/assets/images/10.webp';
-import img11 from '~/assets/images/11.webp';
-import img12 from '~/assets/images/12.webp';
+import img4 from '~/assets/images/05.webp';
+import img5 from '~/assets/images/06.webp';
+import img6 from '~/assets/images/07.webp';
+import img7 from '~/assets/images/08.webp';
+import img8 from '~/assets/images/09.webp';
+import img9 from '~/assets/images/11.webp';
+import img10 from '~/assets/images/13.webp';
+import img11 from '~/assets/images/14.webp';
+import img12 from '~/assets/images/16.webp';
 
 const isPhotoBoxOpen = ref(false);
 const currentImageIndex = ref(0);
