@@ -358,6 +358,40 @@ useHead({
         content: 'https://wedding0823.netlify.app/og-image.webp'
         },
         {
+        property: 'og:image:width',
+        content: '1200'
+        },
+        {
+        property: 'og:image:height',
+        content: '630'
+        },
+        {
+        property: 'og:image:alt',
+        content: '주현이와 영경이의 결혼식'
+        },
+        // 이미지 크롭 위치 조정
+        {
+        property: 'og:image:crop',
+        content: 'top'
+        },
+        {
+        property: 'twitter:card',
+        content: 'summary_large_image'
+        },
+        {
+        property: 'twitter:image',
+        content: 'https://wedding0823.netlify.app/og-image.webp'
+        },
+        {
+        property: 'twitter:image:src',
+        content: 'https://wedding0823.netlify.app/og-image.webp'
+        },
+        // 트위터 이미지 정렬
+        {
+        property: 'twitter:image:align',
+        content: 'top'
+        },
+        {
         property: 'og:url',
         content: 'https://wedding0823.netlify.app'
         }
