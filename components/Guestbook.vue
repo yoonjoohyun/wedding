@@ -8,16 +8,16 @@
       </div>
       <div class="detail_content" :class="{ 'show': isOpen1 }">
         <div class="con_box">
-          <span>윤종문 / 농협은행 / <a>110123456789</a></span>
-          <span class="copy_btn" @click="copyAccount('110123456789')">복사</span>
+          <span>윤종문 / 농협은행 / <a>168-12-234671</a></span>
+          <span class="copy_btn" @click="copyAccount('16812234671')">복사</span>
         </div>
         <div class="con_box">
-          <span>황인경 / 농협은행 / <a>110123456789</a></span>
-          <span class="copy_btn" @click="copyAccount('110123456789')">복사</span>
+          <span>황인경 / 국민은행 / <a>625102-95-113907</a></span>
+          <span class="copy_btn" @click="copyAccount('62510295113907')">복사</span>
         </div>
         <div class="con_box">
-          <span>윤주현 / 신한은행 / <a>01051258018</a></span>
-          <span class="copy_btn" @click="copyAccount('01051258018')">복사</span>
+          <span>윤주현 / 신한은행 / <a>110-323-368657</a></span>
+          <span class="copy_btn" @click="copyAccount('110323368657')">복사</span>
         </div>
       </div>
     </div>
@@ -28,16 +28,16 @@
       </div>
       <div class="detail_content" :class="{ 'show': isOpen2 }">
         <div class="con_box">
-          <span>오연배 / 신한은행 / <a>110123456789</a></span>
-          <span class="copy_btn" @click="copyAccount('110123456789')">복사</span>
+          <span>오연배 / 농협은행 / <a>171434-51-046343</a></span>
+          <span class="copy_btn" @click="copyAccount('17143451046343')">복사</span>
         </div>
         <div class="con_box">
-          <span>김은숙 / 신한은행 / <a>110123456789</a></span>
-          <span class="copy_btn" @click="copyAccount('110123456789')">복사</span>
+          <span>김은숙 / 새마을금고 / <a>9002-1370-0736-0</a></span>
+          <span class="copy_btn" @click="copyAccount('9002137007360')">복사</span>
         </div>
         <div class="con_box">
-          <span>오영경 / 신한은행 / <a>01084777856</a></span>
-          <span class="copy_btn" @click="copyAccount('01084777856')">복사</span>
+          <span>오영경 / 신한은행 / <a>110-438-168625</a></span>
+          <span class="copy_btn" @click="copyAccount('110438168625')">복사</span>
         </div>
       </div>
     </div>
