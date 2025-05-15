@@ -12,11 +12,18 @@
             <div class="title_box">
                 <div class="title">HAPPY<br>Wedding Day</div>
             </div>
-            <div class="subtitle"><p class="subtitle_txt">United by ten years of love,
-                <br>we now promise a lifetime together.</p>
+            <div class="subtitle">
+                <p class="subtitle_txt">
+                    10년의 연애를 끝으로 이제 평생을 약속하려 합니다.
+                    <br>이 뜻깊은 자리에 소중한 분들을 초대합니다.
+                </p>
+                <!--<p class="subtitle_txt">
+                    United by ten years of love,
+                    <br>we now promise a lifetime together.
+                </p>-->
             </div>
             <div class="maincover">
-                <img src="~/assets/images/maincover_0515.webp" alt="maincover">
+                <img src="~/assets/images/maincover.webp" alt="maincover">
             </div>
             <div class="people">윤 종문 · 황 인경 의 차남 <span class="b">주현</span></div>
             <div class="people">오 연배 · 김 은숙 의 차녀 <span class="b">영경</span></div>
@@ -147,14 +154,18 @@
         </div>
         <div class="content05 section">
             <div class="footer_title">
-                꼭 오셔서 자리를 빛내주세요 :D
+                <p>
+                    부부로서 첫걸음을 내딛는 뜻깊은 자리에
+                    <br>고마운 분들과 함게하고 싶습니다.
+                    <br>귀한 걸음으로 함께 축복해 주세요.
+                </p>
             </div>
             <div class="footer_image">
-                <img src="~/assets/images/maincover_0515.webp"/>
+                <img src="~/assets/images/maincover.webp"/>
             </div>
             <div class="footer_link" @click="copyLink('https://wedding0823.netlify.app/')">모바일 청첩장 공유하기<i class="ri-external-link-line"></i></div>
             <div class="footer_copyright">
-                Copyright Crayon_000 All rights reserved.
+                Copyright 2025. JH & YK. All right reserved.
             </div>
             <div class="footer_space"></div>
         </div>
