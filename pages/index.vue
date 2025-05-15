@@ -10,13 +10,13 @@
         <div class="content section">
             <div class="topline"><p>♡ 주현이와 영경이의 결혼식에 초대합니다 ♡</p></div>
             <div class="title_box">
-                <div class="title">YOU & ME 10 YEARS<br>WE TOGETHER 100 YEARS</div>
+                <div class="title">HAPPY<br>Wedding Day</div>
             </div>
-            <div class="subtitle"><p class="subtitle_txt">너와 내가 서로 마주보고 행복했던 지난 10년처럼
-                <br>이제는 우리 함께 나란히 서서 앞으로 100년 더 행복하자</p>
+            <div class="subtitle"><p class="subtitle_txt">United by ten years of love,
+                <br>we now promise a lifetime together.</p>
             </div>
             <div class="maincover">
-                <img src="~/assets/images/maincover.webp" alt="maincover">
+                <img src="~/assets/images/maincover_0515.webp" alt="maincover">
             </div>
             <div class="people">윤 종문 · 황 인경 의 차남 <span class="b">주현</span></div>
             <div class="people">오 연배 · 김 은숙 의 차녀 <span class="b">영경</span></div>
