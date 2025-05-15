@@ -355,8 +355,7 @@ useHead({
         },
         {
         property: 'og:image',
-        // 실제 이미지 URL로 변경해주세요 (전체 URL 경로 필요)
-        content: 'https://wedding0823.netlify.app/_nuxt/maincover.CaYGDvqn.webp'
+        content: 'https://wedding0823.netlify.app/og-image.webp'
         },
         {
         property: 'og:url',
