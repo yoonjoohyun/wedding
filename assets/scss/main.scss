@@ -237,7 +237,7 @@
     height:auto;
     display: block;
     margin: 0 auto;
-    filter:grayscale(0.9);
+    filter:saturate(40%);
 }
 .photo img:hover{
     filter:grayscale(0);
