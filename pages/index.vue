@@ -27,7 +27,7 @@
             </div>
             <div class="people">윤 종문 · 황 인경 의 차남 <span class="b">주현</span></div>
             <div class="people">오 연배 · 김 은숙 의 차녀 <span class="b">영경</span></div>
-            <div class="date">2023년 8월 23일 토요일 오후 1시 20분</div>
+            <div class="date">2023년 8월 23일 토요일 오후 1시 40분</div>
             <div class="location">강동역 3번출구 KDW웨딩 (도보 1분)</div>
             <div class="bottom_line"></div>
         </div>
