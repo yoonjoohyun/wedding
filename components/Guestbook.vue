@@ -1,6 +1,6 @@
 <template>
   <div class="guestbook">
-    <h2 class="guestbook-title">소소한 마음 전달하기</h2>
+    <h2 class="guestbook-title">축하의 마음 전달하기</h2>
     <div class="dropdown">
       <div class="detail_btn" @click="toggleDropdown(1)">
         <span>신랑측 계좌번호 보기</span>
