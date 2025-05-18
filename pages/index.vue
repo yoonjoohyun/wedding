@@ -41,9 +41,9 @@
                 @close="closePhotoBox" 
             />
             <div class="bottom_space">
-                <p>
+                <a>
                     happy wedding picture
-                </p>
+                </a>
             </div>
             <div class="photo_box">
                 <div class="photo" @click="openPhotoBox(0)">
