@@ -40,7 +40,11 @@
                 :initial-slide="currentImageIndex"
                 @close="closePhotoBox" 
             />
-            <div class="bottom_space"></div>
+            <div class="bottom_space">
+                <p>
+                    happy wedding picture
+                </p>
+            </div>
             <div class="photo_box">
                 <div class="photo" @click="openPhotoBox(0)">
                     <img src="~/assets/images/01.webp"/>
