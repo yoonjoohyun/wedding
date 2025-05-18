@@ -2,7 +2,6 @@
   position:absolute;
   display:flex;
   flex-direction: column;
-  justify-content:space-between;
   width:100%;
   height:auto;
     font-family: 'MinSans';
@@ -61,7 +60,7 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
-  height:400px;
+  height:350px;
   padding-right:8px;
   overflow-y:scroll;
   cursor: pointer;
