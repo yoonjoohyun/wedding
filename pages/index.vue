@@ -1,12 +1,14 @@
 <template>
+<div class="music_box">
+    <div class="music_btn" @click="togglemusic" :class="{ 'rotate': isPlaying }">
+        <i :class="isPlaying ? 'ri-volume-up-fill' : 'ri-volume-mute-fill'"></i>
+    </div>
+</div>
 <div class="wrap" @wheel="handleWheel" @touchstart="handleTouchStart" @touchend="handleTouchEnd">
     <audio ref="audioPlayer" loop>
         <source src="~/assets/music/bgm.mp3" type="audio/mp3">
     </audio>
-    <div class="music_btn" @click="togglemusic" :class="{ 'rotate': isPlaying }">
-        <i :class="isPlaying ? 'ri-volume-up-fill' : 'ri-volume-mute-fill'"></i>
-    </div>
-    <div class="sections" :style="{ transform: `translateY(-${currentSection * 100}%)` }">
+    <div class="sections">
         <div class="content section">
             <div class="topline"><p>♡ 주현이와 영경이의 결혼식에 초대합니다 ♡</p></div>
             <div class="title_box">
@@ -104,7 +106,6 @@
                 <div class="vehicle" @click="toggledetail">
                     <i class="ri-bus-2-line icon"></i> 버스 이용 시 
                     <span class="subtxt">: 강동역 하차</span>
-                    <span class="detail_btn">더보기</span>
                 </div>
                 <div class="detail boxing">
                     <p class="txtbox">
@@ -177,10 +178,7 @@
 const audioPlayer = ref(null);
 const isPlaying = ref(false);
 const hasInteracted = ref(false);  // 사용자 상호작용 여부를 추적하는 새로운 ref
-const currentSection = ref(0);
-const touchStartY = ref(0);
 const isModalOpen = ref(false);
-const totalSections = 5;
 let isAnimating = false;
 
 
@@ -227,16 +225,7 @@ onMounted(() => {
     }).render();
 });
 
-const toggledetail = () => {
-    console.log('toggledetail clicked'); // 디버깅용 로그
-    const detailElement = document.querySelector('.detail');
-    if (detailElement) {
-        console.log('detail element found'); // 요소를 찾았는지 확인
-        detailElement.classList.toggle('detailopen');
-    } else {
-        console.log('detail element not found'); // 요소를 찾지 못했을 경우
-    }
-};
+
 
 useHead({
     meta: [
@@ -258,54 +247,6 @@ useHead({
 
 import { useHead } from 'unhead';
 
-const changeSection = (direction) => {
-    if (isAnimating) return;
-    
-    isAnimating = true;
-    if (direction === 'down' && currentSection.value < totalSections - 1) {
-        currentSection.value++;
-    } else if (direction === 'up' && currentSection.value > 0) {
-        currentSection.value--;
-    }
-    
-    setTimeout(() => {
-        isAnimating = false;
-    }, 1000); // 애니메이션 시간과 동일하게 설정
-};
-
-const handleWheel = (e) => {
-    // 모달이 열려있으면 슬라이드 효과 중지
-    if (isModalOpen.value) return;
-    
-    if (e.deltaY > 0) {
-        changeSection('down');
-    } else {
-        changeSection('up');
-    }
-};
-
-const handleTouchStart = (e) => {
-    // 모달이 열려있으면 터치 이벤트 무시
-    if (isModalOpen.value) return;
-    
-    touchStartY.value = e.touches[0].clientY;
-};
-
-const handleTouchEnd = (e) => {
-    // 모달이 열려있으면 터치 이벤트 무시
-    if (isModalOpen.value) return;
-    
-    const touchEndY = e.changedTouches[0].clientY;
-    const diff = touchStartY.value - touchEndY;
-    
-    if (Math.abs(diff) > 50) {
-        if (diff > 0) {
-            changeSection('down');
-        } else {
-            changeSection('up');
-        }
-    }
-};
 
 import PhotoBox from '~/components/PhotoBox.vue';
 import { ref } from 'vue';
