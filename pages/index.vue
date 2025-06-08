@@ -266,15 +266,46 @@ import img9 from '~/assets/images/11.webp';
 import img10 from '~/assets/images/13.webp';
 import img11 from '~/assets/images/14.webp';
 import img12 from '~/assets/images/16.webp';
+import img13 from '~/assets/images/04.webp';
+import img14 from '~/assets/images/10.webp';
+import img15 from '~/assets/images/12.webp';
+import img16 from '~/assets/images/15.webp';
+import img17 from '~/assets/images/17.webp';
+import img18 from '~/assets/images/18.webp';
+import img19 from '~/assets/images/19.webp';
 
 const isPhotoBoxOpen = ref(false);
 const currentImageIndex = ref(0);
 
 // 모든 이미지 경로를 배열로 저장
-const allImages = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12,];
+const allImages = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12];
+const extraImages = [img17, img18, img19];
+const imagesWithExtra = [img13, img14, img15, img16];
+
+const photoBoxImages = ref(allImages);
+
+function getPopupIndexFromThumbIndex(thumbIndex) {
+  // img13: 3 뒤, img14: 10 뒤, img15: 12 뒤, img16: 15 뒤
+  let offset = 0;
+  if (thumbIndex >= 3) offset++;
+  if (thumbIndex >= 10) offset++;
+  if (thumbIndex >= 12) offset++;
+  if (thumbIndex >= 15) offset++;
+  return thumbIndex + offset;
+}
 
 const openPhotoBox = (index) => {
-    currentImageIndex.value = index;
+    // 12장 복사
+    const images = [...allImages];
+    // 원하는 위치에만 추가 이미지 삽입 (splice는 앞에서부터 추가할 때마다 +1씩 밀림)
+    images.splice(3, 0, img13);   // 4번째 뒤에 img13
+    images.splice(10, 0, img14);  // 11번째 뒤에 img14 (앞에서 하나 추가됐으니 +1)
+    images.splice(12, 0, img15);  // 13번째 뒤에 img15 (앞에서 두 개 추가됐으니 +2)
+    images.splice(15, 0, img16);  // 16번째 뒤에 img16 (앞에서 세 개 추가됐으니 +3)
+    images.push(img17, img18, img19); // 마지막에 extra
+
+    photoBoxImages.value = images;
+    currentImageIndex.value = getPopupIndexFromThumbIndex(index);
     isPhotoBoxOpen.value = true;
 };
 
