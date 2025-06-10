@@ -36,7 +36,7 @@
         <div class="content02 section">
             <PhotoBox 
                 :is-open="isPhotoBoxOpen" 
-                :images="allImages" 
+                :images="popupImages" 
                 :initial-slide="currentImageIndex"
                 @close="closePhotoBox" 
             />
@@ -281,10 +281,33 @@ const currentImageIndex = ref(0);
 const allImages = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12,];
 const extraImages = [img13, img14, img15, img16, img17, img18, img19];
 
+// 팝업에서만 사용할 전체 이미지 배열 (3번과 5번 사이에 img13 삽입)
+const popupImages = [
+  allImages[0], // 1번
+  allImages[1], // 2번
+  allImages[2], // 3번
+  img13,        // 4번째 위치
+  allImages[3], // 5번
+  allImages[4], // 6번
+  allImages[5], // 7번
+  allImages[6], // 8번
+  allImages[7], // 9번
+  img14,        // 10번째 위치
+  allImages[8], // 11번
+  img15,        // 12번째 위치
+  allImages[9], // 13번
+  allImages[10],// 14번
+  allImages[11],// 15번
+  ...extraImages.slice(3) // img16~img19
+];
 
 const openPhotoBox = (index) => {
-    currentImageIndex.value = index;
-    isPhotoBoxOpen.value = true;
+  let popupIndex = index;
+  if (index >= 3) popupIndex += 1; // img13 삽입
+  if (index >= 8) popupIndex += 1; // img14 삽입
+  if (index >= 9) popupIndex += 1; // img15 삽입
+  currentImageIndex.value = popupIndex;
+  isPhotoBoxOpen.value = true;
 };
 
 const closePhotoBox = () => {
