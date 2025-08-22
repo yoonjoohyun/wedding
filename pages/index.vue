@@ -328,7 +328,7 @@ useHead({
         },
         {
         property: 'og:description',
-        content: '2025년 8월 23일 토요일 오후 1시 20분, 강동역 3번출구 KDW웨딩'
+        content: '2025년 8월 23일 토요일 오후 1시 40분, 강동역 3번출구 KDW웨딩'
         },
         {
         property: 'og:image',
